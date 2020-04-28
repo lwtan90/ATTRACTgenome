@@ -256,15 +256,12 @@ Report written to QC_filtered_attract_preQC.sexcheck .
 
 ### Step 7: Check Relatedness  
 ```
-PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
-(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
-Logging to QC_filtered_attract_preQC.log.
 Options in effect:
   --bfile filtered_attract_preQC
   --extract QC_filtered_attract_preQC.prune.in
   --keep filtered_attract_preQC.valid.sample
   --out QC_filtered_attract_preQC
-  --rel-cutoff 0.125
+  --rel-cutoff 0.2
 
 128966 MB RAM detected; reserving 64483 MB for main workspace.
 80728670 variants loaded from .bim file.
@@ -286,13 +283,15 @@ Among remaining phenotypes, 1375 are cases and 1031 are controls.  (5
 phenotypes are missing.)
 Excluding 1677 variants on non-autosomes from relationship matrix calc.
 Relationship matrix calculation complete.
-381 people excluded by --rel-cutoff.
+166 people excluded by --rel-cutoff.
 Remaining sample IDs written to QC_filtered_attract_preQC.rel.id .
 ```
 
 
 ### Step 8: Generate the QC-ed file  
 ```
+PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
+(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
 Logging to QC_filtered_attract_preQC.log.
 Options in effect:
   --bfile filtered_attract_preQC
@@ -307,20 +306,57 @@ Options in effect:
 Ambiguous sex IDs written to QC_filtered_attract_preQC.nosex .
 2450 phenotype values loaded from .fam.
 --extract: 5320950 variants remaining.
---keep: 2030 people remaining.
+--keep: 2245 people remaining.
 Warning: Ignoring phenotypes of missing-sex samples.  If you dont want those
 phenotypes to be ignored, use the --allow-no-sex flag.
 Using 1 thread (no multithreaded calculations invoked).
-Before main variant filters, 2030 founders and 0 nonfounders present.
+Before main variant filters, 2245 founders and 0 nonfounders present.
 Calculating allele frequencies... done.
-Warning: 448953 het. haploid genotypes present (see
+Warning: 496293 het. haploid genotypes present (see
 QC_filtered_attract_preQC.hh ); many commands treat these as missing.
-Total genotyping rate in remaining samples is 0.995525.
-5320950 variants and 2030 people pass filters and QC.
-Among remaining phenotypes, 1200 are cases and 830 are controls.
+Total genotyping rate in remaining samples is 0.995572.
+5320950 variants and 2245 people pass filters and QC.
+Among remaining phenotypes, 1350 are cases and 895 are controls.
 --make-bed to QC_filtered_attract_preQC.bed + QC_filtered_attract_preQC.bim +
 QC_filtered_attract_preQC.fam ... done.
 ```
 
+
+### Step 9: PCA  
+```
+PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
+(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to QC_filtered_attract_preQC.log.
+Options in effect:
+  --bfile QC_filtered_attract_preQC
+  --out QC_filtered_attract_preQC
+  --pca 10
+
+128966 MB RAM detected; reserving 64483 MB for main workspace.
+5320950 variants loaded from .bim file.
+2245 people (756 males, 1485 females, 4 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to QC_filtered_attract_preQC.nosex .
+2245 phenotype values loaded from .fam.
+Warning: Ignoring phenotypes of missing-sex samples.  If you dont want those
+phenotypes to be ignored, use the --allow-no-sex flag.
+Using up to 39 threads (change this with --threads).
+Before main variant filters, 2245 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 496293 het. haploid genotypes present (see
+QC_filtered_attract_preQC.hh ); many commands treat these as missing.
+Total genotyping rate is 0.995572.
+5320950 variants and 2245 people pass filters and QC.
+Among remaining phenotypes, 1348 are cases and 893 are controls.  (4 phenotypes
+are missing.)
+Excluding 1808 variants on non-autosomes from relationship matrix calc.
+Relationship matrix calculation complete.
+--pca: Results saved to QC_filtered_attract_preQC.eigenval and
+QC_filtered_attract_preQC.eigenvec .
+```
+
+OUTPUT:  
+<p align="center">
+  <img height="400" src="https://github.com/lwtan90/ATTRACTgenome/blob/master/img/PC12.png">
+</p>  
 
 
