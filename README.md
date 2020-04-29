@@ -201,12 +201,6 @@ Note: No phenotypes present.
 
 
 ### Step 5: Remove samples that exceeded heterozygosity  
-Command:
-```
-./plink --bfile filtered_attract_preQC --extract QC_filtered_attract_preQC.prune.in --keep filtered_attract_preQC.valid.sample --check-sex --out QC_filtered_attract_preQC
-```  
-
-<br />  
 
 Run Log:  
 
@@ -268,7 +262,7 @@ OUTPUT:
 ### Step 6: Sex check  
 Command:  
 ```
-./plink --bfile filtered_attract_preQC --extract QC_filtered_attract_preQC.prune.in --keep filtered_attract_preQC.valid.sample --rel-cutoff 0.2 --out QC_filtered_attract_preQC
+./plink --bfile filtered_attract_preQC --extract QC_filtered_attract_preQC.prune.in --keep filtered_attract_preQC.valid.sample --check-sex --out QC_filtered_attract_preQC 
 ```  
 <br />  
 
@@ -312,10 +306,13 @@ Report written to QC_filtered_attract_preQC.sexcheck .
 ### Step 7: Check Relatedness  
 Command:  
 ```
-./plink --bfile filtered_attract_preQC --make-bed --keep QC_filtered_attract_preQC.rel.id --out QC_filtered_attract_preQC --extract QC_filtered_attract_preQC.snplist
-```
-<br />
-Run Log:  
+./plink --bfile filtered_attract_preQC --extract QC_filtered_attract_preQC.prune.in --keep filtered_attract_preQC.valid.sample --rel-cutoff 0.2 --out QC_filtered_attract_preQC 
+```  
+
+<br />  
+
+Run Log:    
+
 ```
 Options in effect:
   --bfile filtered_attract_preQC
@@ -352,10 +349,13 @@ Remaining sample IDs written to QC_filtered_attract_preQC.rel.id .
 ### Step 8: Generate the QC-ed file  
 Command:  
 ```
-./plink --bfile QC_filtered_attract_preQC --pca 10 --out QC_filtered_attract_preQC
-```
-<br />
-Run Log:  
+./plink --bfile filtered_attract_preQC --make-bed --keep QC_filtered_attract_preQC.rel.id --out QC_filtered_attract_preQC --extract QC_filtered_attract_preQC.snplist
+```  
+
+<br />  
+
+Run Log:    
+
 ```
 PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
 (C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
@@ -390,6 +390,13 @@ QC_filtered_attract_preQC.fam ... done.
 
 
 ### Step 9: PCA  
+Command:  
+```
+./plink --bfile QC_filtered_attract_preQC --pca 10 --out QC_filtered_attract_preQC
+```  
+<br />  
+Run Log:  
+
 ```
 PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
 (C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
