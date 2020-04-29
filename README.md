@@ -204,9 +204,12 @@ Note: No phenotypes present.
 Command:
 ```
 ./plink --bfile filtered_attract_preQC --extract QC_filtered_attract_preQC.prune.in --keep filtered_attract_preQC.valid.sample --check-sex --out QC_filtered_attract_preQC
-```
+```  
+
 <br />  
-Run Log:
+
+Run Log:  
+
 ```
 data = read.table("QC_filtered_attract_preQC.het",header=TRUE)
 summary(data)
@@ -267,8 +270,10 @@ Command:
 ```
 ./plink --bfile filtered_attract_preQC --extract QC_filtered_attract_preQC.prune.in --keep filtered_attract_preQC.valid.sample --rel-cutoff 0.2 --out QC_filtered_attract_preQC
 ```  
-<br />
+<br />  
+
 Run Log:  
+
 ```
 PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
 (C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
