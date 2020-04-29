@@ -49,9 +49,12 @@ filtered_attract_preQC.fam ... done.
 Command:  
 ```
 ./plink --bfile filtered_attract_preQC --maf 0.1 --hwe 1e-6 --geno 0.2 --mind 0.2 --write-snplist --make-just-fam --allow-no-sex --out QC_filtered_attract_preQC
-```
-<br />
-Run Log:  
+```  
+
+<br />  
+
+Run Log:   
+
 ```
 PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
 (C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
@@ -96,9 +99,12 @@ List of variant IDs written to QC_filtered_attract_preQC.snplist .
 Command:  
 ```
 ./plink --bfile filtered_attract_preQC --keep QC_filtered_attract_preQC.fam --extract QC_filtered_attract_preQC.snplist --indep-pairwise 200 50 0.25 --out QC_filtered_attract_preQC
-```
-<br />  
-Run Log:
+```  
+
+<br />    
+
+Run Log:  
+
 ```
 PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
 (C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
@@ -158,9 +164,12 @@ QC_filtered_attract_preQC.prune.out .
 Command:  
 ```
 ./plink --bfile filtered_attract_preQC --extract QC_filtered_attract_preQC.prune.in --keep QC_filtered_attract_preQC.fam --het --out QC_filtered_attract_preQC
-```
-<br />  
-Run Log:  
+```  
+
+<br />    
+
+Run Log:    
+
 ```
 PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
 (C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
