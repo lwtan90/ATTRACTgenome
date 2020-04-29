@@ -48,7 +48,7 @@ filtered_attract_preQC.fam ... done.
 ## Step 2: Preliminary QC  
 Command:  
 ```
-./plink --bfile filtered_attract_preQC --maf 0.1 --hwe 1e-6 --geno 0.2 --mind 0.2 --write-snplist --make-just-fam --allow-no-sex --out QC_filtered_attract_preQC
+./plink --bfile filtered_attract_preQC --mind 0.05 --write-snplist --make-just-fam --allow-no-sex --out QC_filtered_attract_preQC
 ```  
 
 <br />  
@@ -56,41 +56,31 @@ Command:
 Run Log:   
 
 ```
-PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
-(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
-Logging to QC_filtered_attract_preQC.log.
 Options in effect:
   --allow-no-sex
   --bfile filtered_attract_preQC
-  --geno 0.2
-  --hwe 1e-6
-  --maf 0.1
   --make-just-fam
-  --mind 0.2
+  --mind 0.05
   --out QC_filtered_attract_preQC
   --write-snplist
 
 128966 MB RAM detected; reserving 64483 MB for main workspace.
 80728670 variants loaded from .bim file.
-2450 people (0 males, 0 females, 2450 ambiguous) loaded from .fam.
+2450 people (853 males, 1592 females, 5 ambiguous) loaded from .fam.
 Ambiguous sex IDs written to QC_filtered_attract_preQC.nosex .
 2450 phenotype values loaded from .fam.
-0 people removed due to missing genotype data (--mind).
+6 people removed due to missing genotype data (--mind).
+IDs written to QC_filtered_attract_preQC.irem .
 Using 1 thread (no multithreaded calculations invoked).
-Before main variant filters, 2450 founders and 0 nonfounders present.
+Before main variant filters, 2444 founders and 0 nonfounders present.
 Calculating allele frequencies... done.
+Warning: 65671759 het. haploid genotypes present (see
+QC_filtered_attract_preQC.hh ); many commands treat these as missing.
 Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
 treat these as missing.
-Total genotyping rate is 0.987541.
-1644194 variants removed due to missing genotype data (--geno).
-Warning: --hwe observation counts vary by more than 10%.  Consider using
---geno, and/or applying different p-value thresholds to distinct subsets of
-your data.
---hwe: 1674018 variants removed due to Hardy-Weinberg exact test.
-72089508 variants removed due to minor allele threshold(s)
-(--maf/--max-maf/--mac/--max-mac).
-5320950 variants and 2450 people pass filters and QC.
-Among remaining phenotypes, 1413 are cases and 1037 are controls.
+Total genotyping rate in remaining samples is 0.986548.
+80728670 variants and 2444 people pass filters and QC.
+Among remaining phenotypes, 1409 are cases and 1035 are controls.
 List of variant IDs written to QC_filtered_attract_preQC.snplist .
 --make-just-fam to QC_filtered_attract_preQC.fam ... done.
 ```
@@ -98,7 +88,7 @@ List of variant IDs written to QC_filtered_attract_preQC.snplist .
 ## Step 3: Pruning  
 Command:  
 ```
-./plink --bfile filtered_attract_preQC --keep QC_filtered_attract_preQC.fam --extract QC_filtered_attract_preQC.snplist --indep-pairwise 200 50 0.25 --out QC_filtered_attract_preQC
+./plink --bfile filtered_attract_preQC --keep QC_filtered_attract_preQC.fam --indep-pairwise 200 50 0.25 --out QC_filtered_attract_preQC
 ```  
 
 <br />    
@@ -106,56 +96,58 @@ Command:
 Run Log:  
 
 ```
-PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
-(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
 Logging to QC_filtered_attract_preQC.log.
 Options in effect:
   --bfile filtered_attract_preQC
-  --extract QC_filtered_attract_preQC.snplist
   --indep-pairwise 200 50 0.25
   --keep QC_filtered_attract_preQC.fam
   --out QC_filtered_attract_preQC
 
 128966 MB RAM detected; reserving 64483 MB for main workspace.
 80728670 variants loaded from .bim file.
-2450 people (0 males, 0 females, 2450 ambiguous) loaded from .fam.
+2450 people (853 males, 1592 females, 5 ambiguous) loaded from .fam.
 Ambiguous sex IDs written to QC_filtered_attract_preQC.nosex .
 2450 phenotype values loaded from .fam.
---extract: 5320950 variants remaining.
---keep: 2450 people remaining.
+--keep: 2444 people remaining.
 Warning: Ignoring phenotypes of missing-sex samples.  If you dont want those
 phenotypes to be ignored, use the --allow-no-sex flag.
 Using 1 thread (no multithreaded calculations invoked).
-Before main variant filters, 2450 founders and 0 nonfounders present.
+Before main variant filters, 2444 founders and 0 nonfounders present.
 Calculating allele frequencies... done.
-Total genotyping rate is 0.995284.
-5320950 variants and 2450 people pass filters and QC.
-Note: No phenotypes present.
-Pruned 389720 variants from chromosome 1, leaving 28135.
-Pruned 410414 variants from chromosome 2, leaving 26918.
-Pruned 358946 variants from chromosome 3, leaving 23197.
-Pruned 372957 variants from chromosome 4, leaving 21446.
-Pruned 323012 variants from chromosome 5, leaving 19832.
-Pruned 314109 variants from chromosome 6, leaving 18879.
-Pruned 300121 variants from chromosome 7, leaving 19339.
-Pruned 270312 variants from chromosome 8, leaving 16185.
-Pruned 218987 variants from chromosome 9, leaving 15735.
-Pruned 261101 variants from chromosome 10, leaving 17097.
-Pruned 248017 variants from chromosome 11, leaving 15690.
-Pruned 241501 variants from chromosome 12, leaving 17548.
-Pruned 186717 variants from chromosome 13, leaving 11970.
-Pruned 160204 variants from chromosome 14, leaving 11188.
-Pruned 136894 variants from chromosome 15, leaving 10961.
-Pruned 150884 variants from chromosome 16, leaving 11974.
-Pruned 125373 variants from chromosome 17, leaving 11613.
-Pruned 141732 variants from chromosome 18, leaving 10384.
-Pruned 112083 variants from chromosome 19, leaving 9921.
-Pruned 111998 variants from chromosome 20, leaving 8758.
-Pruned 72678 variants from chromosome 21, leaving 4887.
-Pruned 64776 variants from chromosome 22, leaving 5857.
-Pruned 131 variants from chromosome 23, leaving 1677.
-Pruned 7740 variants from chromosome 25, leaving 1352.
-Pruning complete.  4980407 of 5320950 variants removed.
+Warning: 65671759 het. haploid genotypes present (see
+QC_filtered_attract_preQC.hh ); many commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate in remaining samples is 0.986548.
+80728670 variants and 2444 people pass filters and QC.
+Among remaining phenotypes, 1407 are cases and 1032 are controls.  (5
+phenotypes are missing.)
+Pruned 1567507 variants from chromosome 1, leaving 4710840.
+Pruned 1672662 variants from chromosome 2, leaving 5085933.
+Pruned 1428133 variants from chromosome 3, leaving 4218187.
+Pruned 1418271 variants from chromosome 4, leaving 3977763.
+Pruned 1272867 variants from chromosome 5, leaving 3755133.
+Pruned 1223313 variants from chromosome 6, leaving 3480907.
+Pruned 1153573 variants from chromosome 7, leaving 3362984.
+Pruned 1069180 variants from chromosome 8, leaving 3169113.
+Pruned 868378 variants from chromosome 9, leaving 2519742.
+Pruned 1008435 variants from chromosome 10, leaving 2877542.
+Pruned 959765 variants from chromosome 11, leaving 2824828.
+Pruned 974710 variants from chromosome 12, leaving 2821226.
+Pruned 728995 variants from chromosome 13, leaving 2067283.
+Pruned 636022 variants from chromosome 14, leaving 1847146.
+Pruned 562429 variants from chromosome 15, leaving 1646710.
+Pruned 657093 variants from chromosome 16, leaving 1916038.
+Pruned 551578 variants from chromosome 17, leaving 1654058.
+Pruned 557691 variants from chromosome 18, leaving 1598342.
+Pruned 489510 variants from chromosome 19, leaving 1360989.
+Pruned 471925 variants from chromosome 20, leaving 1366249.
+Pruned 277456 variants from chromosome 21, leaving 745877.
+Pruned 285331 variants from chromosome 22, leaving 795386.
+Pruned 1316002 variants from chromosome 23, leaving 1544027.
+Pruned 103898 variants from chromosome 24, leaving 4565.
+Pruned 41764 variants from chromosome 25, leaving 81314.
+Pruning complete.  21296488 of 80728670 variants removed.
 Marker lists written to QC_filtered_attract_preQC.prune.in and
 QC_filtered_attract_preQC.prune.out .
 ```
@@ -171,8 +163,6 @@ Command:
 Run Log:    
 
 ```
-PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
-(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
 Logging to QC_filtered_attract_preQC.log.
 Options in effect:
   --bfile filtered_attract_preQC
@@ -183,20 +173,26 @@ Options in effect:
 
 128966 MB RAM detected; reserving 64483 MB for main workspace.
 80728670 variants loaded from .bim file.
-2450 people (0 males, 0 females, 2450 ambiguous) loaded from .fam.
+2450 people (853 males, 1592 females, 5 ambiguous) loaded from .fam.
 Ambiguous sex IDs written to QC_filtered_attract_preQC.nosex .
 2450 phenotype values loaded from .fam.
---extract: 340543 variants remaining.
---keep: 2450 people remaining.
+--extract: 59432182 variants remaining.
+--keep: 2444 people remaining.
 Warning: Ignoring phenotypes of missing-sex samples.  If you dont want those
 phenotypes to be ignored, use the --allow-no-sex flag.
 Using 1 thread (no multithreaded calculations invoked).
-Before main variant filters, 2450 founders and 0 nonfounders present.
+Before main variant filters, 2444 founders and 0 nonfounders present.
 Calculating allele frequencies... done.
-Total genotyping rate is 0.975041.
-340543 variants and 2450 people pass filters and QC.
-Note: No phenotypes present.
---het: 338866 variants scanned, report written to QC_filtered_attract_preQC.het
+Warning: 15389794 het. haploid genotypes present (see
+QC_filtered_attract_preQC.hh ); many commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate in remaining samples is 0.988693.
+59432182 variants and 2444 people pass filters and QC.
+Among remaining phenotypes, 1407 are cases and 1032 are controls.  (5
+phenotypes are missing.)
+--het: 57883590 variants scanned, report written to
+QC_filtered_attract_preQC.het .
 ```
 
 
@@ -223,40 +219,43 @@ write.table(valid[,c(1,2)], "filtered_attract_preQC.valid.sample",quote=F,row.na
 
 OUTPUT:  
 ```
+> 
+> #Read the file from the heterozygosity estimates
 > data = read.table("QC_filtered_attract_preQC.het",header=TRUE)
 > summary(data)
-      FID            IID           O.HOM.           E.HOM.      
- WHB1809:   1   WHB1809:   1   Min.   :131897   Min.   :178600  
- WHB1810:   1   WHB1810:   1   1st Qu.:212330   1st Qu.:213100  
- WHB1811:   1   WHB1811:   1   Median :218397   Median :214500  
- WHB1812:   1   WHB1812:   1   Mean   :216782   Mean   :212929  
- WHB1813:   1   WHB1813:   1   3rd Qu.:222675   3rd Qu.:215600  
- WHB1814:   1   WHB1814:   1   Max.   :241171   Max.   :218000  
- (Other):2444   (Other):2444                                    
-     N.NM.              F           
- Min.   :277029   Min.   :-0.70910  
- 1st Qu.:330768   1st Qu.:-0.02477  
- Median :333004   Median : 0.03123  
- Mean   :330510   Mean   : 0.03457  
- 3rd Qu.:334624   3rd Qu.: 0.08676  
- Max.   :338203   Max.   : 0.55910  
-                                    
-> 
-> 
+      FID            IID           O.HOM.             E.HOM.        
+ WHB1809:   1   WHB1809:   1   Min.   :55140176   Min.   :55050000  
+ WHB1810:   1   WHB1810:   1   1st Qu.:56699893   1st Qu.:56630000  
+ WHB1811:   1   WHB1811:   1   Median :56755622   Median :56700000  
+ WHB1812:   1   WHB1812:   1   Mean   :56711723   Mean   :56649223  
+ WHB1813:   1   WHB1813:   1   3rd Qu.:56792558   3rd Qu.:56750000  
+ WHB1814:   1   WHB1814:   1   Max.   :56954223   Max.   :56990000  
+ (Other):2438   (Other):2438                                        
+     N.NM.                F           
+ Min.   :55572484   Min.   :-0.52160  
+ 1st Qu.:57227750   1st Qu.: 0.05188  
+ Median :57302242   Median : 0.11205  
+ Mean   :57250658   Mean   : 0.10507  
+ 3rd Qu.:57358505   3rd Qu.: 0.16687  
+ Max.   :57614768   Max.   : 0.52990  
+                                      
 > m = mean(data$F)
 > s = sd(data$F)
 > s
-[1] 0.1089366
+[1] 0.09463362
 > m
-[1] 0.03456561
+[1] 0.1050662
+> 
+> #Retain samples with F coefficient within 3 SD of the population mean
 > valid = subset(data,F<=m+3*s & F>= m-3*s)
 > dim(valid)
-[1] 2411    6
+[1] 2405    6
 > dim(data)
-[1] 2450    6
-> 
+[1] 2444    6
 > 
 > write.table(valid[,c(1,2)], "filtered_attract_preQC.valid.sample",quote=F,row.names=F)
+> 
+
 ```
 
 ### Step 6: Sex check  
@@ -306,7 +305,7 @@ Report written to QC_filtered_attract_preQC.sexcheck .
 ### Step 7: Check Relatedness  
 Command:  
 ```
-./plink --bfile filtered_attract_preQC --extract QC_filtered_attract_preQC.prune.in --keep filtered_attract_preQC.valid.sample --rel-cutoff 0.2 --out QC_filtered_attract_preQC 
+./plink --bfile filtered_attract_preQC --extract QC_filtered_attract_preQC.prune.in --keep filtered_attract_preQC.valid.sample --rel-cutoff 0.2 --out QC_filtered_attract_preQC
 ```  
 
 <br />  
@@ -314,6 +313,9 @@ Command:
 Run Log:    
 
 ```
+PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
+(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to QC_filtered_attract_preQC.log.
 Options in effect:
   --bfile filtered_attract_preQC
   --extract QC_filtered_attract_preQC.prune.in
@@ -326,30 +328,32 @@ Options in effect:
 2450 people (853 males, 1592 females, 5 ambiguous) loaded from .fam.
 Ambiguous sex IDs written to QC_filtered_attract_preQC.nosex .
 2450 phenotype values loaded from .fam.
---extract: 340543 variants remaining.
---keep: 2411 people remaining.
+--extract: 59432182 variants remaining.
+--keep: 2405 people remaining.
 Warning: Ignoring phenotypes of missing-sex samples.  If you dont want those
 phenotypes to be ignored, use the --allow-no-sex flag.
 Using up to 39 threads (change this with --threads).
-Before main variant filters, 2411 founders and 0 nonfounders present.
+Before main variant filters, 2405 founders and 0 nonfounders present.
 Calculating allele frequencies... done.
-Warning: 513940 het. haploid genotypes present (see
+Warning: 15268186 het. haploid genotypes present (see
 QC_filtered_attract_preQC.hh ); many commands treat these as missing.
-Total genotyping rate in remaining samples is 0.975364.
-340543 variants and 2411 people pass filters and QC (before --rel-cutoff).
-Among remaining phenotypes, 1375 are cases and 1031 are controls.  (5
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate in remaining samples is 0.988744.
+59432182 variants and 2405 people pass filters and QC (before --rel-cutoff).
+Among remaining phenotypes, 1372 are cases and 1028 are controls.  (5
 phenotypes are missing.)
-Excluding 1677 variants on non-autosomes from relationship matrix calc.
+Excluding 1548592 variants on non-autosomes from relationship matrix calc.
 Relationship matrix calculation complete.
-166 people excluded by --rel-cutoff.
+97 people excluded by --rel-cutoff.
 Remaining sample IDs written to QC_filtered_attract_preQC.rel.id .
 ```
 
 
-### Step 8: Generate the QC-ed file  
+### Step 8: Generate the Sample QC-ed file  
 Command:  
 ```
-./plink --bfile filtered_attract_preQC --make-bed --keep QC_filtered_attract_preQC.rel.id --out QC_filtered_attract_preQC --extract QC_filtered_attract_preQC.snplist
+./plink --bfile filtered_attract_preQC --make-bed --keep QC_filtered_attract_preQC.rel.id --out parse1_QC_filtered_attract_preQC
 ```  
 
 <br />  
@@ -357,42 +361,234 @@ Command:
 Run Log:    
 
 ```
-PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
-(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
-Logging to QC_filtered_attract_preQC.log.
 Options in effect:
   --bfile filtered_attract_preQC
-  --extract QC_filtered_attract_preQC.snplist
   --keep QC_filtered_attract_preQC.rel.id
   --make-bed
-  --out QC_filtered_attract_preQC
+  --out parse1_QC_filtered_attract_preQC
 
 128966 MB RAM detected; reserving 64483 MB for main workspace.
 80728670 variants loaded from .bim file.
 2450 people (853 males, 1592 females, 5 ambiguous) loaded from .fam.
-Ambiguous sex IDs written to QC_filtered_attract_preQC.nosex .
+Ambiguous sex IDs written to parse1_QC_filtered_attract_preQC.nosex .
 2450 phenotype values loaded from .fam.
---extract: 5320950 variants remaining.
---keep: 2245 people remaining.
+--keep: 2308 people remaining.
 Warning: Ignoring phenotypes of missing-sex samples.  If you dont want those
 phenotypes to be ignored, use the --allow-no-sex flag.
 Using 1 thread (no multithreaded calculations invoked).
-Before main variant filters, 2245 founders and 0 nonfounders present.
+Before main variant filters, 2308 founders and 0 nonfounders present.
 Calculating allele frequencies... done.
-Warning: 496293 het. haploid genotypes present (see
-QC_filtered_attract_preQC.hh ); many commands treat these as missing.
-Total genotyping rate in remaining samples is 0.995572.
-5320950 variants and 2245 people pass filters and QC.
-Among remaining phenotypes, 1350 are cases and 895 are controls.
---make-bed to QC_filtered_attract_preQC.bed + QC_filtered_attract_preQC.bim +
-QC_filtered_attract_preQC.fam ... done.
+Warning: 60756050 het. haploid genotypes present (see
+parse1_QC_filtered_attract_preQC.hh ); many commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate in remaining samples is 0.986627.
+80728670 variants and 2308 people pass filters and QC.
+Among remaining phenotypes, 1358 are cases and 950 are controls.
+--make-bed to parse1_QC_filtered_attract_preQC.bed +
+parse1_QC_filtered_attract_preQC.bim + parse1_QC_filtered_attract_preQC.fam ...
+done.
 ```
 
+### Step 9: QC at SNPs level
+Command:  
 
-### Step 9: PCA  
+```
+./plink --bfile parse1_QC_filtered_attract_preQC --maf 0.01 --hwe 1e-6 --geno 0.05 --allow-no-sex --make-bed --out parse2_QC_filtered_attract_preQC  
+
+```  
+
+Run Log:  
+```
+PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
+(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to parse2_QC_filtered_attract_preQC.log.
+Options in effect:
+  --allow-no-sex
+  --bfile parse1_QC_filtered_attract_preQC
+  --geno 0.05
+  --hwe 1e-6
+  --maf 0.01
+  --make-bed
+  --out parse2_QC_filtered_attract_preQC
+
+128966 MB RAM detected; reserving 64483 MB for main workspace.
+80728670 variants loaded from .bim file.
+2308 people (790 males, 1514 females, 4 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to parse2_QC_filtered_attract_preQC.nosex .
+2308 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 2308 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 60756050 het. haploid genotypes present (see
+parse2_QC_filtered_attract_preQC.hh ); many commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.986627.
+4239480 variants removed due to missing genotype data (--geno).
+Warning: --hwe observation counts vary by more than 10%.  Consider using
+--geno, and/or applying different p-value thresholds to distinct subsets of
+your data.
+--hwe: 882813 variants removed due to Hardy-Weinberg exact test.
+65681379 variants removed due to minor allele threshold(s)
+(--maf/--max-maf/--mac/--max-mac).
+9924998 variants and 2308 people pass filters and QC.
+Among remaining phenotypes, 1358 are cases and 950 are controls.
+--make-bed to parse2_QC_filtered_attract_preQC.bed +
+parse2_QC_filtered_attract_preQC.bim + parse2_QC_filtered_attract_preQC.fam ...
+done.
+```    
+
+### Step 10: Run test-missing to identify bad SNPs  
+  
 Command:  
 ```
-./plink --bfile QC_filtered_attract_preQC --pca 10 --out QC_filtered_attract_preQC
+./plink --bfile parse2_QC_filtered_attract_preQC --test-missing midp --allow-no-sex --out parse2_QC_filtered_attract_preQC
+```  
+
+
+Run Log:  
+```
+PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
+(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to parse2_QC_filtered_attract_preQC.log.
+Options in effect:
+  --allow-no-sex
+  --bfile parse2_QC_filtered_attract_preQC
+  --out parse2_QC_filtered_attract_preQC
+  --test-missing midp
+
+128966 MB RAM detected; reserving 64483 MB for main workspace.
+9924998 variants loaded from .bim file.
+2308 people (790 males, 1514 females, 4 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to parse2_QC_filtered_attract_preQC.nosex .
+2308 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 2308 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 1083019 het. haploid genotypes present (see
+parse2_QC_filtered_attract_preQC.hh ); many commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.997122.
+9924998 variants and 2308 people pass filters and QC.
+Among remaining phenotypes, 1358 are cases and 950 are controls.
+Writing --test-missing report to parse2_QC_filtered_attract_preQC.missing ...
+done.
+```  
+
+### Step 11: Remove SNPs with case-control missingness < 5e-5  
+Command:  
+```
+awk '{if($5<0.00005){print $2}}' parse2_QC_filtered_attract_preQC.missing  > parse2_QC_filtered_attract_preQC.missingsnp
+./plink --bfile parse2_QC_filtered_attract_preQC --make-bed  --out parse3_QC_filtered_attract_preQC --exclude parse2_QC_filtered_attract_preQC.missingsnp  
+
+
+```  
+  
+Run Log:  
+```
+Logging to parse3_QC_filtered_attract_preQC.log.
+Options in effect:
+  --bfile parse2_QC_filtered_attract_preQC
+  --exclude parse2_QC_filtered_attract_preQC.missingsnp
+  --make-bed
+  --out parse3_QC_filtered_attract_preQC
+
+128966 MB RAM detected; reserving 64483 MB for main workspace.
+9924998 variants loaded from .bim file.
+2308 people (790 males, 1514 females, 4 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to parse3_QC_filtered_attract_preQC.nosex .
+2308 phenotype values loaded from .fam.
+--exclude: 9820292 variants remaining.
+Warning: Ignoring phenotypes of missing-sex samples.  If you dont want those
+phenotypes to be ignored, use the --allow-no-sex flag.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 2308 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 647883 het. haploid genotypes present (see
+parse3_QC_filtered_attract_preQC.hh ); many commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.997395.
+9820292 variants and 2308 people pass filters and QC.
+Among remaining phenotypes, 1358 are cases and 950 are controls.
+--make-bed to parse3_QC_filtered_attract_preQC.bed +
+parse3_QC_filtered_attract_preQC.bim + parse3_QC_filtered_attract_preQC.fam ...
+done.
+```  
+
+### Step 12: Prune the final QC SNPs  
+
+Command:  
+
+```
+./plink --bfile parse3_QC_filtered_attract_preQC --indep-pairwise 200 50 0.25 --out parse3_QC_filtered_attract_preQC
+```  
+Run Log:  
+
+```
+PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
+(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to parse3_QC_filtered_attract_preQC.log.
+Options in effect:
+  --bfile parse3_QC_filtered_attract_preQC
+  --indep-pairwise 200 50 0.25
+  --out parse3_QC_filtered_attract_preQC
+
+128966 MB RAM detected; reserving 64483 MB for main workspace.
+9820292 variants loaded from .bim file.
+2308 people (790 males, 1514 females, 4 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to parse3_QC_filtered_attract_preQC.nosex .
+2308 phenotype values loaded from .fam.
+Warning: Ignoring phenotypes of missing-sex samples.  If you dont want those
+phenotypes to be ignored, use the --allow-no-sex flag.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 2308 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 647883 het. haploid genotypes present (see
+parse3_QC_filtered_attract_preQC.hh ); many commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.997395.
+9820292 variants and 2308 people pass filters and QC.
+Among remaining phenotypes, 1356 are cases and 948 are controls.  (4 phenotypes
+are missing.)
+Pruned 627433 variants from chromosome 1, leaving 154883.
+Pruned 665864 variants from chromosome 2, leaving 155700.
+Pruned 582841 variants from chromosome 3, leaving 130632.
+Pruned 588124 variants from chromosome 4, leaving 119049.
+Pruned 518398 variants from chromosome 5, leaving 115019.
+Pruned 505341 variants from chromosome 6, leaving 108156.
+Pruned 472045 variants from chromosome 7, leaving 107665.
+Pruned 422428 variants from chromosome 8, leaving 93993.
+Pruned 350393 variants from chromosome 9, leaving 82099.
+Pruned 419085 variants from chromosome 10, leaving 92614.
+Pruned 386837 variants from chromosome 11, leaving 85867.
+Pruned 391552 variants from chromosome 12, leaving 93394.
+Pruned 297705 variants from chromosome 13, leaving 63839.
+Pruned 258293 variants from chromosome 14, leaving 60697.
+Pruned 221880 variants from chromosome 15, leaving 56446.
+Pruned 236097 variants from chromosome 16, leaving 61769.
+Pruned 199897 variants from chromosome 17, leaving 62047.
+Pruned 228729 variants from chromosome 18, leaving 51767.
+Pruned 176624 variants from chromosome 19, leaving 53514.
+Pruned 175976 variants from chromosome 20, leaving 46236.
+Pruned 109295 variants from chromosome 21, leaving 24562.
+Pruned 107404 variants from chromosome 22, leaving 29399.
+Pruned 1310 variants from chromosome 23, leaving 10791.
+Pruned 16 variants from chromosome 24, leaving 28.
+Pruned 12366 variants from chromosome 25, leaving 4193.
+Pruning complete.  7955933 of 9820292 variants removed.
+Marker lists written to parse3_QC_filtered_attract_preQC.prune.in and
+parse3_QC_filtered_attract_preQC.prune.out .
+```  
+
+
+### Step 13: PCA  
+Command:  
+```
+./plink --bfile parse3_QC_filtered_attract_preQC --extract parse3_QC_filtered_attract_preQC.prune.in --pca 10 --out parse3_QC_filtered_attract_preQC
 ```  
 <br />  
 Run Log:  
@@ -400,32 +596,36 @@ Run Log:
 ```
 PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
 (C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
-Logging to QC_filtered_attract_preQC.log.
+Logging to parse3_QC_filtered_attract_preQC.log.
 Options in effect:
-  --bfile QC_filtered_attract_preQC
-  --out QC_filtered_attract_preQC
+  --bfile parse3_QC_filtered_attract_preQC
+  --extract parse3_QC_filtered_attract_preQC.prune.in
+  --out parse3_QC_filtered_attract_preQC
   --pca 10
 
 128966 MB RAM detected; reserving 64483 MB for main workspace.
-5320950 variants loaded from .bim file.
-2245 people (756 males, 1485 females, 4 ambiguous) loaded from .fam.
-Ambiguous sex IDs written to QC_filtered_attract_preQC.nosex .
-2245 phenotype values loaded from .fam.
+9820292 variants loaded from .bim file.
+2308 people (790 males, 1514 females, 4 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to parse3_QC_filtered_attract_preQC.nosex .
+2308 phenotype values loaded from .fam.
+--extract: 1864359 variants remaining.
 Warning: Ignoring phenotypes of missing-sex samples.  If you dont want those
 phenotypes to be ignored, use the --allow-no-sex flag.
 Using up to 39 threads (change this with --threads).
-Before main variant filters, 2245 founders and 0 nonfounders present.
+Before main variant filters, 2308 founders and 0 nonfounders present.
 Calculating allele frequencies... done.
-Warning: 496293 het. haploid genotypes present (see
-QC_filtered_attract_preQC.hh ); many commands treat these as missing.
-Total genotyping rate is 0.995572.
-5320950 variants and 2245 people pass filters and QC.
-Among remaining phenotypes, 1348 are cases and 893 are controls.  (4 phenotypes
+Warning: 601151 het. haploid genotypes present (see
+parse3_QC_filtered_attract_preQC.hh ); many commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.992577.
+1864359 variants and 2308 people pass filters and QC.
+Among remaining phenotypes, 1356 are cases and 948 are controls.  (4 phenotypes
 are missing.)
-Excluding 1808 variants on non-autosomes from relationship matrix calc.
+Excluding 10819 variants on non-autosomes from relationship matrix calc.
 Relationship matrix calculation complete.
---pca: Results saved to QC_filtered_attract_preQC.eigenval and
-QC_filtered_attract_preQC.eigenvec .
+--pca: Results saved to parse3_QC_filtered_attract_preQC.eigenval and
+parse3_QC_filtered_attract_preQC.eigenvec .
 ```
 
 OUTPUT:  
