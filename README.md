@@ -9,8 +9,11 @@ Command:
 ```
 ./plink --bfile attract_preQC --remove unwanted_list.txt --out filtered_attract_preQC --make-bed
 ```  
+
 <br />  
-Run Log:  
+
+Run Log: 
+ 
 ```
 PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
 (C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
