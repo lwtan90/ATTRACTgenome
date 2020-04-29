@@ -8,8 +8,8 @@
 Command:  
 ```
 ./plink --bfile attract_preQC --remove unwanted_list.txt --out filtered_attract_preQC --make-bed
-```
-<br />
+```  
+<br />  
 Run Log:  
 ```
 PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
@@ -39,7 +39,8 @@ Total genotyping rate in remaining samples is 0.987541.
 Among remaining phenotypes, 1413 are cases and 1037 are controls.
 --make-bed to filtered_attract_preQC.bed + filtered_attract_preQC.bim +
 filtered_attract_preQC.fam ... done.
-```
+```  
+
 
 ## Step 2: Preliminary QC  
 Command:  
