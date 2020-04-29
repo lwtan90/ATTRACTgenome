@@ -4,6 +4,13 @@
 
 
 ## Step 1: Remove duplicate samples  
+
+Command:  
+```
+./plink --bfile attract_preQC --remove unwanted_list.txt --out filtered_attract_preQC --make-bed
+```
+<br />
+Run Log:  
 ```
 PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
 (C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
@@ -35,6 +42,12 @@ filtered_attract_preQC.fam ... done.
 ```
 
 ## Step 2: Preliminary QC  
+Command:  
+```
+./plink --bfile filtered_attract_preQC --maf 0.1 --hwe 1e-6 --geno 0.2 --mind 0.2 --write-snplist --make-just-fam --allow-no-sex --out QC_filtered_attract_preQC
+```
+<br />
+Run Log:  
 ```
 PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
 (C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
@@ -76,6 +89,12 @@ List of variant IDs written to QC_filtered_attract_preQC.snplist .
 ```
 
 ## Step 3: Pruning  
+Command:  
+```
+./plink --bfile filtered_attract_preQC --keep QC_filtered_attract_preQC.fam --extract QC_filtered_attract_preQC.snplist --indep-pairwise 200 50 0.25 --out QC_filtered_attract_preQC
+```
+<br />  
+Run Log:
 ```
 PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
 (C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
@@ -132,6 +151,12 @@ QC_filtered_attract_preQC.prune.out .
 ```
 
 ## Step 4: Estimate heterozygosity  
+Command:  
+```
+./plink --bfile filtered_attract_preQC --extract QC_filtered_attract_preQC.prune.in --keep QC_filtered_attract_preQC.fam --het --out QC_filtered_attract_preQC
+```
+<br />  
+Run Log:  
 ```
 PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
 (C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
@@ -163,6 +188,12 @@ Note: No phenotypes present.
 
 
 ### Step 5: Remove samples that exceeded heterozygosity  
+Command:
+```
+./plink --bfile filtered_attract_preQC --extract QC_filtered_attract_preQC.prune.in --keep filtered_attract_preQC.valid.sample --check-sex --out QC_filtered_attract_preQC
+```
+<br />  
+Run Log:
 ```
 data = read.table("QC_filtered_attract_preQC.het",header=TRUE)
 summary(data)
@@ -219,6 +250,12 @@ OUTPUT:
 ```
 
 ### Step 6: Sex check  
+Command:  
+```
+./plink --bfile filtered_attract_preQC --extract QC_filtered_attract_preQC.prune.in --keep filtered_attract_preQC.valid.sample --rel-cutoff 0.2 --out QC_filtered_attract_preQC
+```  
+<br />
+Run Log:  
 ```
 PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
 (C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
@@ -255,6 +292,12 @@ Report written to QC_filtered_attract_preQC.sexcheck .
 
 
 ### Step 7: Check Relatedness  
+Command:  
+```
+./plink --bfile filtered_attract_preQC --make-bed --keep QC_filtered_attract_preQC.rel.id --out QC_filtered_attract_preQC --extract QC_filtered_attract_preQC.snplist
+```
+<br />
+Run Log:  
 ```
 Options in effect:
   --bfile filtered_attract_preQC
@@ -289,6 +332,12 @@ Remaining sample IDs written to QC_filtered_attract_preQC.rel.id .
 
 
 ### Step 8: Generate the QC-ed file  
+Command:  
+```
+./plink --bfile QC_filtered_attract_preQC --pca 10 --out QC_filtered_attract_preQC
+```
+<br />
+Run Log:  
 ```
 PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
 (C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
