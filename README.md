@@ -588,7 +588,7 @@ parse3_QC_filtered_attract_preQC.prune.out .
 ### Step 13: PCA  
 Command:  
 ```
-./plink --bfile parse3_QC_filtered_attract_preQC --extract parse3_QC_filtered_attract_preQC.prune.in --pca 10 --out parse3_QC_filtered_attract_preQC
+./plink --bfile parse3_QC_filtered_attract_preQC --pca 10 --out parse3_QC_filtered_attract_preQC
 ```  
 <br />  
 Run Log:  
@@ -599,7 +599,6 @@ PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
 Logging to parse3_QC_filtered_attract_preQC.log.
 Options in effect:
   --bfile parse3_QC_filtered_attract_preQC
-  --extract parse3_QC_filtered_attract_preQC.prune.in
   --out parse3_QC_filtered_attract_preQC
   --pca 10
 
@@ -608,21 +607,20 @@ Options in effect:
 2308 people (790 males, 1514 females, 4 ambiguous) loaded from .fam.
 Ambiguous sex IDs written to parse3_QC_filtered_attract_preQC.nosex .
 2308 phenotype values loaded from .fam.
---extract: 1864359 variants remaining.
 Warning: Ignoring phenotypes of missing-sex samples.  If you dont want those
 phenotypes to be ignored, use the --allow-no-sex flag.
 Using up to 39 threads (change this with --threads).
 Before main variant filters, 2308 founders and 0 nonfounders present.
 Calculating allele frequencies... done.
-Warning: 601151 het. haploid genotypes present (see
+Warning: 647883 het. haploid genotypes present (see
 parse3_QC_filtered_attract_preQC.hh ); many commands treat these as missing.
 Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
 treat these as missing.
-Total genotyping rate is 0.992577.
-1864359 variants and 2308 people pass filters and QC.
+Total genotyping rate is 0.997395.
+9820292 variants and 2308 people pass filters and QC.
 Among remaining phenotypes, 1356 are cases and 948 are controls.  (4 phenotypes
 are missing.)
-Excluding 10819 variants on non-autosomes from relationship matrix calc.
+Excluding 12145 variants on non-autosomes from relationship matrix calc.
 Relationship matrix calculation complete.
 --pca: Results saved to parse3_QC_filtered_attract_preQC.eigenval and
 parse3_QC_filtered_attract_preQC.eigenvec .
