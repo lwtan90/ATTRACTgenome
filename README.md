@@ -630,5 +630,121 @@ OUTPUT:
 <p align="center">
   <img height="400" src="https://github.com/lwtan90/ATTRACTgenome/blob/master/img/PC12.png">
 </p>  
+  
 
+## Step 14: Testing for QTL with Marker BG  
+Command:  
+```
+./plink --bfile parse3_QC_filtered_attract_preQC --linear --allow-no-sex --adjust --covar parse3_QC_filtered_attract_preQC.pca --covar-name PC1,PC2 --out BG
+```  
+<br />  
+Run Log:  
+
+```
+Options in effect:
+  --adjust
+  --allow-no-sex
+  --bfile parse3_QC_filtered_attract_preQC
+  --covar parse3_QC_filtered_attract_preQC.pca
+  --covar-name PC1,PC2
+  --linear
+  --out BG
+
+128966 MB RAM detected; reserving 64483 MB for main workspace.
+9820292 variants loaded from .bim file.
+2308 people (0 males, 0 females, 2308 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to BG.nosex .
+2293 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+--covar: 2 out of 10 covariates loaded.
+Before main variant filters, 2308 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.997395.
+9820292 variants and 2308 people pass filters and QC.
+Phenotype data is quantitative.
+Writing linear model association results to BG.assoc.linear ... done.
+--adjust: Genomic inflation est. lambda (based on median chisq) = 1.05289.
+--adjust values (9820248 variants) written to BG.assoc.linear.adjusted .
+```  
+
+
+
+## Step 15: Testing for QTL with Marker PB  
+Command:  
+```
+```  
+<br />  
+Run Log:  
+
+```
+PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
+(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to PB.log.
+Options in effect:
+  --adjust
+  --allow-no-sex
+  --bfile parse3_QC_filtered_attract_preQC
+  --covar parse3_QC_filtered_attract_preQC.pca
+  --covar-name PC1,PC2
+  --linear
+  --out PB
+
+128966 MB RAM detected; reserving 64483 MB for main workspace.
+9820292 variants loaded from .bim file.
+2308 people (0 males, 0 females, 2308 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to PB.nosex .
+2291 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+--covar: 2 out of 10 covariates loaded.
+Before main variant filters, 2308 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.997395.
+9820292 variants and 2308 people pass filters and QC.
+Phenotype data is quantitative.
+Writing linear model association results to PB.assoc.linear ... done.
+--adjust: Genomic inflation est. lambda (based on median chisq) = 1.14225.
+--adjust values (9820248 variants) written to PB.assoc.linear.adjusted .
+```  
+
+
+## Step 16: Testing for QTL with Marker PANPT  
+Command:  
+```
+```  
+<br />  
+Run Log:  
+
+```
+Logging to BM_PANPT.log.
+Options in effect:
+  --adjust
+  --allow-no-sex
+  --bfile parse3_QC_filtered_attract_preQC
+  --covar parse3_QC_filtered_attract_preQC.pca
+  --covar-name PC1,PC2
+  --linear
+  --out BM_PANPT
+
+128966 MB RAM detected; reserving 64483 MB for main workspace.
+9820292 variants loaded from .bim file.
+2308 people (0 males, 0 females, 2308 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to BM_PANPT.nosex .
+968 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+--covar: 2 out of 10 covariates loaded.
+Before main variant filters, 2308 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.997395.
+9820292 variants and 2308 people pass filters and QC.
+Phenotype data is quantitative.
+Writing linear model association results to BM_PANPT.assoc.linear ... done.
+--adjust: Genomic inflation est. lambda (based on median chisq) = 1.00613.
+--adjust values (9820239 variants) written to BM_PANPT.assoc.linear.adjusted .
+```  
 
