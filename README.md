@@ -667,7 +667,17 @@ Phenotype data is quantitative.
 Writing linear model association results to BG.assoc.linear ... done.
 --adjust: Genomic inflation est. lambda (based on median chisq) = 1.05289.
 --adjust values (9820248 variants) written to BG.assoc.linear.adjusted .
-```  
+```   
+OUTPUT:  
+
+<p align="center">
+  <img height="400" src="https://github.com/lwtan90/ATTRACTgenome/blob/master/img/BG_manhattan.png">
+</p>   
+
+<p align="center">
+  <img height="400" src="https://github.com/lwtan90/ATTRACTgenome/blob/master/img/BG_QQ.png">
+</p>  
+
 
 
 
