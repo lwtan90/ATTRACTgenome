@@ -2,6 +2,8 @@
 # Documentation for ATTRACT Data Processing  
 ###
 
+<details>  
+<summary> QC procesing of entire datasets </summary>  
 
 ## Step 1: Remove duplicate samples  
 
@@ -756,5 +758,61 @@ Phenotype data is quantitative.
 Writing linear model association results to BM_PANPT.assoc.linear ... done.
 --adjust: Genomic inflation est. lambda (based on median chisq) = 1.00613.
 --adjust values (9820239 variants) written to BM_PANPT.assoc.linear.adjusted .
+```    
+
+</details>  
+<break />
+<break />
+<details>  
+<summary> QC Processing of Chinese Cohort </summary>  
+## Subsetting Chinese patients only based on PCA  
+Command:  
+```
 ```  
+<br />
+Run Log:  
+```
+PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
+(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to chinese_QC_filtered_attract_preQC.log.
+Options in effect:
+  --allow-no-sex
+  --bfile parse1_QC_filtered_attract_preQC
+  --geno 0.05
+  --hwe 1e-6
+  --keep chinese.txt
+  --maf 0.01
+  --make-bed
+  --out chinese_QC_filtered_attract_preQC
+
+129044 MB RAM detected; reserving 64522 MB for main workspace.
+80728670 variants loaded from .bim file.
+2308 people (790 males, 1514 females, 4 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to chinese_QC_filtered_attract_preQC.nosex .
+2308 phenotype values loaded from .fam.
+--keep: 1550 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1550 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 39042920 het. haploid genotypes present (see
+chinese_QC_filtered_attract_preQC.hh ); many commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate in remaining samples is 0.986487.
+4266770 variants removed due to missing genotype data (--geno).
+Warning: --hwe observation counts vary by more than 10%, due to the X
+chromosome.  You may want to use a less stringent --hwe p-value threshold for X
+chromosome variants.
+--hwe: 676457 variants removed due to Hardy-Weinberg exact test.
+66128463 variants removed due to minor allele threshold(s)
+(--maf/--max-maf/--mac/--max-mac).
+9656980 variants and 1550 people pass filters and QC.
+Among remaining phenotypes, 834 are cases and 716 are controls.
+--make-bed to chinese_QC_filtered_attract_preQC.bed +
+chinese_QC_filtered_attract_preQC.bim + chinese_QC_filtered_attract_preQC.fam
+... done.
+
+```  
+
+</details>  
 
