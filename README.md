@@ -768,11 +768,13 @@ Writing linear model association results to BM_PANPT.assoc.linear ... done.
  
 ## Subsetting Chinese patients only based on PCA  
 
-Command:  
+Command:    
+
 ```
-```  
-<br />
-Run Log:  
+```   
+ 
+Run Log:   
+ 
 ```
 PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
 (C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
@@ -814,7 +816,8 @@ Among remaining phenotypes, 834 are cases and 716 are controls.
 chinese_QC_filtered_attract_preQC.bim + chinese_QC_filtered_attract_preQC.fam
 ... done.
 
-```  
+```    
+
 
 </details>  
 
