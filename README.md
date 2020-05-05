@@ -764,8 +764,10 @@ Writing linear model association results to BM_PANPT.assoc.linear ... done.
 <break />
 <break />
 <details>  
-<summary> QC Processing of Chinese Cohort </summary>  
+<summary> QC Processing of Chinese Cohort </summary>   
+ 
 ## Subsetting Chinese patients only based on PCA  
+
 Command:  
 ```
 ```  
