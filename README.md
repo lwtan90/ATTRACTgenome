@@ -818,6 +818,78 @@ chinese_QC_filtered_attract_preQC.bim + chinese_QC_filtered_attract_preQC.fam
 
 ```    
 
+<break />  
+
+## Test missing SNPs  
+Run log:  
+```
+PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
+(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to chinese_QC_filtered_attract_preQC.log.
+Options in effect:
+  --allow-no-sex
+  --bfile chinese_QC_filtered_attract_preQC
+  --out chinese_QC_filtered_attract_preQC
+  --test-missing midp
+
+129044 MB RAM detected; reserving 64522 MB for main workspace.
+9656980 variants loaded from .bim file.
+1550 people (517 males, 1031 females, 2 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to chinese_QC_filtered_attract_preQC.nosex .
+1550 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1550 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 750815 het. haploid genotypes present (see
+chinese_QC_filtered_attract_preQC.hh ); many commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.996917.
+9656980 variants and 1550 people pass filters and QC.
+Among remaining phenotypes, 834 are cases and 716 are controls.
+Writing --test-missing report to chinese_QC_filtered_attract_preQC.missing ...
+done.
+```   
+
+## Generating final list of SNPs for testing in Chinese Cohort    
+
+Run log:  
+```
+PLINK v1.90b6.16 64-bit (19 Feb 2020)          www.cog-genomics.org/plink/1.9/
+(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to parse3_chinese_QC_filtered_attract_preQC.log.
+Options in effect:
+  --bfile chinese_QC_filtered_attract_preQC
+  --exclude chinese_QC_filtered_attract_preQC.missingsnp
+  --make-bed
+  --out parse3_chinese_QC_filtered_attract_preQC
+
+129044 MB RAM detected; reserving 64522 MB for main workspace.
+9656980 variants loaded from .bim file.
+1550 people (517 males, 1031 females, 2 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to parse3_chinese_QC_filtered_attract_preQC.nosex .
+1550 phenotype values loaded from .fam.
+--exclude: 9591999 variants remaining.
+Warning: Ignoring phenotypes of missing-sex samples.  If you don't want those
+phenotypes to be ignored, use the --allow-no-sex flag.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1550 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 588405 het. haploid genotypes present (see
+parse3_chinese_QC_filtered_attract_preQC.hh ); many commands treat these as
+missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.99711.
+9591999 variants and 1550 people pass filters and QC.
+Among remaining phenotypes, 834 are cases and 716 are controls.
+--make-bed to parse3_chinese_QC_filtered_attract_preQC.bed +
+parse3_chinese_QC_filtered_attract_preQC.bim +
+parse3_chinese_QC_filtered_attract_preQC.fam ... done.
+```  
+
+ 
+
 
 </details>  
 
