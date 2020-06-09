@@ -2,8 +2,6 @@
 # Documentation for ATTRACT Data Processing  
 ###
 
-<details>  
-<summary> QC procesing of entire datasets </summary>    
 ## Estimate Heterozygosity and remove samples with extreme heterozygosity values  
  
 ```  
@@ -42,7 +40,9 @@ awk '{if($5<0.00005){print $2}}' parse2_QC_filtered_attract_preQC.missing  > par
 ./plink --bfile parse3_QC_filtered_attract_preQC --pca 10 --out parse3_QC_filtered_attract_preQC  
 ```  
 
+OUTPUT:  
 
-  
-</details>  
+<p align="center">
+  <img height="400" src="https://github.com/lwtan90/ATTRACTgenome/blob/master/img/PC12.png">
+</p>  
 
