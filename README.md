@@ -2,6 +2,26 @@
 # Documentation for ATTRACT Data Processing  
 ###
 
+## Remove autosome, indels, and non-related samples  
+```  
+
+./plink --bfile attract_preQC --snps-only --autosome --remove unwanted_list.txt --out filtered_attract_preQC --make-bed  
+
+```  
+  
+
+
+## Sample-level filtering  
+```  
+
+./plink --bfile filtered_attract_preQC --write-snplist --make-just-fam --allow-no-sex --out QC_filtered_attract_preQC
+grep "*" QC_filtered_attract_preQC.snplist > actual.QC_filtered_attract_preQC.snplist
+./plink --bfile filtered_attract_preQC --exclude actual.QC_filtered_attract_preQC.snplist --mind 0.05 --write-snplist --make-just-fam --allow-no-sex --out QC_filtered_attract_preQC  
+
+```  
+
+
+
 ## Estimate Heterozygosity and remove samples with extreme heterozygosity values  
  
 ```  
