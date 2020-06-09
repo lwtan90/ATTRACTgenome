@@ -1,8 +1,8 @@
-###
+####
 # Documentation for ATTRACT Data Processing  
-###
-
-## Remove autosome, indels, and non-related samples  
+####
+<br><br>
+#### Remove autosome, indels, and non-related samples  
 ```  
 
 ./plink --bfile attract_preQC --snps-only --autosome --remove unwanted_list.txt --out filtered_attract_preQC --make-bed  
@@ -11,7 +11,7 @@
   
 
 
-### Sample-level filtering  
+#### Sample-level filtering  
 ```  
 
 ./plink --bfile filtered_attract_preQC --write-snplist --make-just-fam --allow-no-sex --out QC_filtered_attract_preQC
@@ -22,7 +22,7 @@ grep "*" QC_filtered_attract_preQC.snplist > actual.QC_filtered_attract_preQC.sn
 
 
 
-### Estimate Heterozygosity and remove samples with extreme heterozygosity values  
+#### Estimate Heterozygosity and remove samples with extreme heterozygosity values  
  
 ```  
 
@@ -31,7 +31,7 @@ grep "*" QC_filtered_attract_preQC.snplist > actual.QC_filtered_attract_preQC.sn
 R-3.5.1 --no-save -q < removeHETERO.r  
 ```  
   
-### Check relatedness  
+#### Check relatedness  
 
 ```   
 
@@ -39,13 +39,13 @@ R-3.5.1 --no-save -q < removeHETERO.r
 ./plink --bfile filtered_attract_preQC --make-bed --keep QC_filtered_attract_preQC.rel.id --out parse1_QC_filtered_attract_preQC  
 ```  
 
-### Filter variants for MAF, HWE, GENOTYPE RATE  
+#### Filter variants for MAF, HWE, GENOTYPE RATE  
 ```  
 
 ./plink --bfile parse1_QC_filtered_attract_preQC --maf 0.01 --hwe 1e-6 --geno 0.05 --allow-no-sex --make-bed --out parse2_QC_filtered_attract_preQC    
 ```  
   
-### Test for missingness  
+#### Test for missingness  
 ```  
 
 ./plink --bfile parse2_QC_filtered_attract_preQC --test-missing midp --allow-no-sex --out parse2_QC_filtered_attract_preQC  
@@ -53,7 +53,7 @@ awk '{if($5<0.00005){print $2}}' parse2_QC_filtered_attract_preQC.missing  > par
 ./plink --bfile parse2_QC_filtered_attract_preQC --make-bed  --out parse3_QC_filtered_attract_preQC --exclude parse2_QC_filtered_attract_preQC.missingsnp    
 ```  
 
-### Run PCA to identify population stratification  
+#### Run PCA to identify population stratification  
 ```  
 
 ./plink --bfile parse3_QC_filtered_attract_preQC --indep-pairwise 200 50 0.25 --out parse3_QC_filtered_attract_preQC  
