@@ -2,7 +2,7 @@
 Author: Wilson Tan  
 Date: 18/9/2020  
 
-# Quality Control of the WGS Datasets  
+# Quality Control of the WGS Datasets (see bin/preQC_pipeline.sh)  
 ## Filtering Criteria  
 1. Rate of Genotype missingness per individual: 5%
 2. Autosomes only  
