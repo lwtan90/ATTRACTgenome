@@ -17,3 +17,5 @@ Date: 18/9/2020
 2. Non-related individuals  
 3. WGS datasets with decent quality  
 
+# Quality Control of the WGS Datasets (Rare variants)  
+
