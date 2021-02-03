@@ -31,14 +31,13 @@ The script involved in this section can be found in bin/WGSfiltering.sh.
 5. HWE: 1e-6  
 6. Genotype missingness: 5%  
 
+## Steps  
+Step 1: Remove autosome and individuals with genotype missingness per individual (missing) > 5%
+Step 2: Variant pruning, remove related samples as well as samples with unusual heterozygosity
+Step 3: Variant filtering for common variant (for computation of population) and remove differential missing SNPs
+Step 4: run PCA to identify population stratification, and divide samples into chinese/indian/malays  
+Step 5: Ancestry-specific calculation to identify ancestry-level-common-variants  
+Step 6: extract RARE SNPs (excluding those which are common at ancestry level) MAF<0.01  
+Step 7: If you want to obtain samples which are clearly defined as chinese/malay/indian, use the following files. Else, the above file is ok, and you can adjust for population stratification later in model using the PC values  
 
-### Extra Steps for Rare Variants  
-1. Divide the samples based on ethnicity divided in the PCA.  
-2. Calculate the MAF in each population, and overall in Singapore.  
-3. Retain rare variants that are found in all 3 populations.  
-4. Check with Gnomad all populations for evidence of rarity.  
-5. Check with SG10K for evidence of rarity.  
-6. Filter variants without coverage of > 10x.  
-7. Filter variants without Alternative allele count > 3.  
-8. 
 </details>  
