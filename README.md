@@ -46,3 +46,11 @@ Step 7: If you want to obtain samples which are clearly defined as chinese/malay
 2. final_rare_ATTRACT (removing mixed lineages)  
 
 </details>  
+
+
+## Burden Test  
+
+<details>  
+<summary> Details </summary>  
+
+</details>  
