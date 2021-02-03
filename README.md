@@ -20,7 +20,7 @@ The analyses can be divided into three parts:
 ## Preparation of Files Required for Burden Test  
 <details>  
 <summary> Details </summary>  
-
+The script involved in this section can be found in [here](bin/WGSfiltering.sh).
 
 # Quality Control of the WGS Datasets (see bin/preQC_pipeline.sh)  
 ### Filtering Criteria  
