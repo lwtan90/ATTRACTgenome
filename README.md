@@ -40,4 +40,9 @@ Step 5: Ancestry-specific calculation to identify ancestry-level-common-variants
 Step 6: extract RARE SNPs (excluding those which are common at ancestry level) MAF<0.01  
 Step 7: If you want to obtain samples which are clearly defined as chinese/malay/indian, use the following files. Else, the above file in STep 6 is ok, and you can adjust for population stratification later in model using the PC values  
 
+  
+## Final files for all analyses  
+1. rare_parse2_QC_filtered_attract_preQC (without removing mixed lineage)  
+2. final_rare_ATTRACT (removing mixed lineages)  
+
 </details>  
