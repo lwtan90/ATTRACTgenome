@@ -32,9 +32,9 @@ The script involved in this section can be found in bin/WGSfiltering.sh.
 6. Genotype missingness: 5%  
 
 ## Steps  
-Step 1: Remove autosome and individuals with genotype missingness per individual (missing) > 5%
-Step 2: Variant pruning, remove related samples as well as samples with unusual heterozygosity
-Step 3: Variant filtering for common variant (for computation of population) and remove differential missing SNPs
+Step 1: Remove autosome and individuals with genotype missingness per individual (missing) > 5%  
+Step 2: Variant pruning, remove related samples as well as samples with unusual heterozygosity  
+Step 3: Variant filtering for common variant (for computation of population) and remove differential missing SNPs  
 Step 4: run PCA to identify population stratification, and divide samples into chinese/indian/malays  
 Step 5: Ancestry-specific calculation to identify ancestry-level-common-variants  
 Step 6: extract RARE SNPs (excluding those which are common at ancestry level) MAF<0.01  
