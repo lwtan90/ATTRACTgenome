@@ -57,7 +57,25 @@ Dependencies:
 1. SKAT  (https://cran.r-project.org/web/packages/SKAT/index.html)  
 2. PLINK v1.9 (https://zzz.bwh.harvard.edu/plink/)  
 This pipeline runs on SGE. Please modify the execution of the scripts if you have other linux system.  
+The key script to burdentestPIPELINE.sh is bin/burdentest/burden.sh  
+
+```
+#!/bin/bash
+
+PLINK=/mnt/projects/wlwtan/cardiac_epigenetics/SG10K/ATTRACT/GWAS/plink
+GENE=$1
 
 
+## forming input required for burden test
+grep $GENE target.setid | awk '{print $2}' > "test_"$GENE".id"
+$PLINK --bfile EXONPLUS.parse3_rare_parse1_QC_filtered_attract_preQC --extract "test_"$GENE".id" --out "test_"$GENE --make-bed
+
+## Burden tes takes in genotype matrix
+$PLINK --bfile "test_"$GENE --recodeA --out "test_"$GENE".mat"
+
+## Actual burden test is done here
+Rscript-3.5.1 /mnt/projects/wlwtan/cardiac+_epigenetics/burdentest.r $GENE
+rm "test_"$GENE*
+```
 
 </details>  
