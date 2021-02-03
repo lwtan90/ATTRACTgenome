@@ -7,6 +7,9 @@ This document will describe the steps taken to process ATTRACT WGS dataset, and 
 No result will be posted here as the project has yet to be published.  
 The pipeline assumes that the variants  have been transformed into plink binary file formats. No description on mapping and variant calling will be provided here.  
 
+## Input Files  
+1. plink binary file formats (bim,bed,fam)  
+Current plink file location: /mnt/projects/dcklinzing/dcklinzing/ATTRACT/joint_call_vcf_whole_genome/plink/preQC/attract_preQC  
 
 # Quality Control of the WGS Datasets (see bin/preQC_pipeline.sh)  
 ### Filtering Criteria  
