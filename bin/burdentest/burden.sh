@@ -3,6 +3,8 @@
 # This is part of the burdentestPIPELINE.sh
 # User Argument: sh burdentestPIPELINE.sh geneid
 # Dependencies: target.setid, PLINK, burdentest.r, plink files from WGS filtering/filtered downstream
+# Note:
+# Consider adding full path to burden test
 ########################################################################
 
 #!/bin/bash
@@ -19,6 +21,6 @@ $PLINK --bfile EXONPLUS.parse3_rare_parse1_QC_filtered_attract_preQC --extract "
 $PLINK --bfile "test_"$GENE --recodeA --out "test_"$GENE".mat"
 
 ## Actual burden test is done here
-Rscript-3.5.1 burdentest.r $GENE
+Rscript-3.5.1 /mnt/projects/wlwtan/cardiac+_epigenetics/burdentest.r $GENE
 rm "test_"$GENE*
 
