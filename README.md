@@ -17,6 +17,11 @@ The analyses can be divided into three parts:
 2. Annotation of variants using ANNOVAR  
 3. Burden Test  
 
+## Preparation of Files Required for Burden Test  
+<details>  
+<summary> Preparation of Files Required for Burden Test </summary>  
+</details>  
+
 # Quality Control of the WGS Datasets (see bin/preQC_pipeline.sh)  
 ### Filtering Criteria  
 1. Rate of Genotype missingness per individual: 5%
