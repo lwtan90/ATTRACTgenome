@@ -56,6 +56,8 @@ The script involved in this section can be found in bin/burdentest/burdentestPIP
 Dependencies:  
 1. SKAT  (https://cran.r-project.org/web/packages/SKAT/index.html)  
 2. PLINK v1.9 (https://zzz.bwh.harvard.edu/plink/)  
+This pipeline runs on SGE. Please modify the execution of the scripts if you have other linux system.  
+
 
 
 </details>  
