@@ -38,6 +38,6 @@ Step 3: Variant filtering for common variant (for computation of population) and
 Step 4: run PCA to identify population stratification, and divide samples into chinese/indian/malays  
 Step 5: Ancestry-specific calculation to identify ancestry-level-common-variants  
 Step 6: extract RARE SNPs (excluding those which are common at ancestry level) MAF<0.01  
-Step 7: If you want to obtain samples which are clearly defined as chinese/malay/indian, use the following files. Else, the above file is ok, and you can adjust for population stratification later in model using the PC values  
+Step 7: If you want to obtain samples which are clearly defined as chinese/malay/indian, use the following files. Else, the above file in STep 6 is ok, and you can adjust for population stratification later in model using the PC values  
 
 </details>  
