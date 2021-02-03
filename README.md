@@ -20,7 +20,7 @@ The analyses can be divided into three parts:
 ## Preparation of Files Required for Burden Test  
 <details>  
 <summary> Details </summary>  
-The script involved in this section can be found in [here](https://github.com/lwtan90/ATTRACTgenome/blob/master/bin/WGSfiltering.sh)  
+The script involved in this section can be found in bin/WGSfiltering.sh.  
   
 
 
