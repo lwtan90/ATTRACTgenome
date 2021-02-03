@@ -1,6 +1,12 @@
 # ATTRACT Genome Analysis  
 Author: Wilson Tan  
-Date: 18/9/2020  
+Date: 2/2/2021  
+
+### Description  
+This document will describe the steps taken to process ATTRACT WGS dataset, and prepare for downstream analyses such as Burden Test and GWAS analysis.
+No result will be posted here as the project has yet to be published.  
+The pipeline assumes that the variants  have been transformed into plink binary file formats.  
+  
 
 # Quality Control of the WGS Datasets (see bin/preQC_pipeline.sh)  
 ### Filtering Criteria  
