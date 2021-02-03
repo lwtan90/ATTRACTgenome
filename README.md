@@ -53,5 +53,9 @@ Step 7: If you want to obtain samples which are clearly defined as chinese/malay
 <details>  
 <summary> Details </summary>  
 The script involved in this section can be found in bin/burdentest/burdentestPIPELINE.sh.  
+Dependencies:  
+1. SKAT  (https://cran.r-project.org/web/packages/SKAT/index.html)  
+2. PLINK v1.9 (https://zzz.bwh.harvard.edu/plink/)  
+
 
 </details>  
