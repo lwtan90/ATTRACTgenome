@@ -5,8 +5,8 @@ Date: 2/2/2021
 ### Description  
 This document will describe the steps taken to process ATTRACT WGS dataset, and prepare for downstream analyses such as Burden Test and GWAS analysis.
 No result will be posted here as the project has yet to be published.  
-The pipeline assumes that the variants  have been transformed into plink binary file formats.  
-No description on mapping and variant calling will be provided in this script.  
+The pipeline assumes that the variants  have been transformed into plink binary file formats. No description on mapping and variant calling will be provided here.  
+
 
 # Quality Control of the WGS Datasets (see bin/preQC_pipeline.sh)  
 ### Filtering Criteria  
