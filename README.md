@@ -11,6 +11,12 @@ The pipeline assumes that the variants  have been transformed into plink binary 
 plink binary file formats (bim,bed,fam)  
 Current plink file location: /mnt/projects/dcklinzing/dcklinzing/ATTRACT/joint_call_vcf_whole_genome/plink/preQC/attract_preQC  
 
+## Analysis Workflow  
+The analyses can be divided into three parts:  
+1. Preparation of files required for burden test  
+2. Annotation of variants using ANNOVAR  
+3. Burden Test  
+
 # Quality Control of the WGS Datasets (see bin/preQC_pipeline.sh)  
 ### Filtering Criteria  
 1. Rate of Genotype missingness per individual: 5%
