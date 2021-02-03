@@ -19,8 +19,8 @@ The analyses can be divided into three parts:
 
 ## Preparation of Files Required for Burden Test  
 <details>  
-<summary> Preparation of Files Required for Burden Test </summary>  
-</details>  
+<summary> Details </summary>  
+
 
 # Quality Control of the WGS Datasets (see bin/preQC_pipeline.sh)  
 ### Filtering Criteria  
@@ -47,3 +47,4 @@ The analyses can be divided into three parts:
 6. Filter variants without coverage of > 10x.  
 7. Filter variants without Alternative allele count > 3.  
 8. 
+</details>  
