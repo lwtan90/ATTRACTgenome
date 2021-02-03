@@ -84,6 +84,11 @@ Burden.sh will consolidate the list of variants (depending on the category of in
 and perform SKAT/Burden test using the function implemented in R package SKAT. Plink is required to convert the genotype files into matrix format 
 required by the R package for processing. Other files required for the FAM files and eigenvec files from PCA analysis performed in WGSfiltering.sh.  
 
+If you have decided to run burden test on 1 gene, just run the following:  
+```
+sh burden.sh GENE1  
+
+```  
 
 
 </details>  
