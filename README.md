@@ -89,6 +89,24 @@ cat ../sift.setid ../polyphen.setid | sort | uniq > target.setid
 ```  
 
 #### Step 3: Run burdentestPIPELINE.sh  
+Store thie pipeline in a bin folder of your interest. For me, I have stored it in "/mnt/projects/wlwtan/cardiac_epigenetics/burden.sh". Therefore, before you start the analysis, change the location of the script (Full Path).  
+Firstly, the pipeline will create 10,000 commands to execute burden test. (depends on the number of genes in setid file formed in Step 2).  
+Next, the pipeline will split the 10,000 commands into groups of 50. You are now allowed to run 10K parallel jobs on Aquila.  
+Lastly, 200 parallel jobs will be submitted to Aquila, each job should take about 1 hour.  
+
+```
+## Form the cmd for burdentest
+## target.setid can be formed by using listvariants.sh file found in the bin
+## setid file <gene id><variant>
+awk '{print "sh /mnt/projects/wlwtan/cardiac_epigenetics/burden.sh "$1}' target.setid | uniq > burden.cwd
+
+## If aquila is still being used, I will split all genes into 50 lines per script, and run
+split --lines=50 burden.cwd
+ls x* | awk '{print "qsub -pe OpenMP 1 -l h_rt=2:00:00,mem_free=20G -V -cwd "$1}' > run.cwd
+sh run.cwd
+## Good luck
+```  
+
 #### Step 4: Run postBURDENTESTpipeline.sh  
 
   
