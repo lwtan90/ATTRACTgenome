@@ -89,6 +89,9 @@ If you have decided to run burden test on 1 gene, just run the following:
 sh burden.sh GENE1  
 
 ```  
+  
+Expect Output from burden.sh:  
+ 
 
 
 </details>  
