@@ -73,6 +73,14 @@ sh burdentestPIPELINE.sh
 ###Step 4: Run postBURDENTESTpipeline.sh
 sh postBURDENTESTpipeline.sh
 ```  
+#### Description of the steps:  
+##### Step 1: Make a folder with any folder name  
+First, create a folder. The name of the folder should be intuitive. For example, if you are interested to perform Burden Test on PVT variants, the folder name should be PVT.  
+```
+mkdir PVT
+```  
+##### Step 2: Create listvariants.sh  
+
   
 ### burden.sh  
 Burden.sh will consolidate the list of variants (depending on the category of interest) that are located within the coding region of a gene,
