@@ -63,7 +63,8 @@ Eg. Nonsynonymous.setid
 |ENSG00000001084|chr6:53500201:G:A|
 |ENSG00000001084|chr6:53500269:A:G|  
 
-Note: The variants were categorized according to variant annotation. For each category of variants, a setid should be made:  
+Note:  
+The variants were categorized according to variant annotation. For each category of variants, a setid should be made:  
 1. nonsynonymous.setid  
 2. synonymous.setid  
 3. frameshift_indel.setid  
@@ -76,6 +77,9 @@ Note: The variants were categorized according to variant annotation. For each ca
 10. damaging(2/3/4/5/).setid  
 11. others  
 
+Note:  
+Since we are only interested in the variants falling in coding region, to reduce memory and analysis time, you can use the coordinates listed in src/EXONPLUS.bed to extract coding variants from the plink file (rare_parse2_QC_filtered_attract_preQC/final_rare_ATTRACT).  
+The resultant plink file is EXONPLUS.parse3_rare_parse1_QC_filtered_attract_preQC.  
 
 </details>  
 
