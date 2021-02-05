@@ -91,7 +91,11 @@ sh burden.sh GENE1
 ```  
   
 Expect Output from burden.sh:  
- 
+```
+   file       pvalue   test
+1 GENE1 4.781062e-04   SKAT
+2 GENE1 3.030084e-06 BURDEN
+``` 
 
 
 </details>  
