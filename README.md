@@ -75,11 +75,18 @@ sh postBURDENTESTpipeline.sh
 ```  
 #### Description of the steps:  
 ##### Step 1: Make a folder with any folder name  
-First, create a folder. The name of the folder should be intuitive. For example, if you are interested to perform Burden Test on PVT variants, the folder name should be PVT.  
+First, create a folder. The name of the folder should be intuitive. For example, if you are interested to perform Burden Test on pathogenic variants, the folder name should be pathogenic.  
 ```
-mkdir PVT
+mkdir Pathogenic
+cd Pathogenic
 ```  
 ##### Step 2: Create listvariants.sh  
+Next, create listvariants.sh that will concanate the list of variants predicted to be damaging by SIFT//Polyphen into a file called target.setid.  
+To prevent double counting, kindly use "uniq".  
+
+```
+cat ../sift.setid ../polyphen.setid | uniq > target.setid
+```  
 
   
 ### burden.sh  
