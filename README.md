@@ -73,6 +73,8 @@ sh burdentestPIPELINE.sh
 ###Step 4: Run postBURDENTESTpipeline.sh
 sh postBURDENTESTpipeline.sh
 ```  
+<details>  
+
 #### Description of the steps:  
 ##### Step 1: Make a folder with any folder name  
 First, create a folder. The name of the folder should be intuitive. For example, if you are interested to perform Burden Test on pathogenic variants, the folder name should be pathogenic.  
@@ -132,6 +134,7 @@ cat allstat/*.stat | grep BURDEN | sort -k2,2g > statistics.txt
 Rscript-3.5.1 bin/burdentest/qqplot.r statistics.txt burden.qqplot.png
 Rscript-3.5.1 bin/burdentest/manhatan.r statistics.txt burden.manhatan.png
 ```  
+</details>  
 
 #### Expected Output  
 ##### annotated_statistics.txt  
