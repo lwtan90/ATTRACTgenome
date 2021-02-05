@@ -109,7 +109,29 @@ sh run.cwd
 ## Good luck
 ```  
 
-#### Step 4: Run postBURDENTESTpipeline.sh  
+##### Step 4: Run postBURDENTESTpipeline.sh  
+This wrapper ws created to facilitate the consolidation of burden test p-values and to perform multiple-testing correction.  
+The path of a few files must be organized properly:  
+1. countVARperGENE.r  
+2. qqplot.r  
+3. manhatan.r  
+These files can be found in bin/burdentest  
+The final burden test output will be recorded in annotated_statistics.txt.  
+
+```
+### Step 1: Transfer all gene p-value files into a folder (allstat)
+mkdir allstat
+mv *.stat allstat/
+
+
+### Step 2: Count number of variants per gene
+Rscript-3.5.1 bin/burdentest/countVARperGENE.r target.setid
+
+### Step 3: adjust p-value and plot various graphs
+cat allstat/*.stat | grep BURDEN | sort -k2,2g > statistics.txt
+Rscript-3.5.1 bin/burdentest/qqplot.r statistics.txt burden.qqplot.png
+Rscript-3.5.1 bin/burdentest/manhatan.r statistics.txt burden.manhatan.png
+```  
 
   
 ### burden.sh  
