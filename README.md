@@ -85,8 +85,11 @@ Next, create listvariants.sh that will concanate the list of variants predicted 
 To prevent double counting, kindly use "uniq".  
 
 ```
-cat ../sift.setid ../polyphen.setid | uniq > target.setid
+cat ../sift.setid ../polyphen.setid | sort | uniq > target.setid
 ```  
+
+#### Step 3: Run burdentestPIPELINE.sh  
+#### Step 4: Run postBURDENTESTpipeline.sh  
 
   
 ### burden.sh  
