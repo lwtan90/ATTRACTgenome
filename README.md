@@ -95,7 +95,13 @@ Expect Output from burden.sh:
    file       pvalue   test
 1 GENE1 4.781062e-04   SKAT
 2 GENE1 3.030084e-06 BURDEN
-``` 
+```  
+
+Description of the columns:  
+1. file: the gene of interest with the collapsed variants (In this case, GENE1).    
+2. pvalue: unadjusted p-value from SKAT and Burden Test. Multiple testing correction (Bonferroni) is highly recommended with the p-value obtained from other genes.  
+3. test: Burden or SKAT test.  
+
 
 
 </details>  
