@@ -47,10 +47,11 @@ Step 7: If you want to obtain samples which are clearly defined as chinese/malay
 3. Setid file (lists of variants per gene)  
 
 #### Setid Files  
-A two-column tab-delimited file, comprising of gene identifier (column 1) and variant id (column 2).  
-For burden test / collapsing test, this file will help the program to identify variant-gene association before the program collapses the variants for burden test.  
+A two-column tab-delimited file, comprising of gene identifier (column 1) and variant id (column 2). 
+For burden test / collapsing test, this file will help the program to identify variant-gene association before the program collapses the variants for burden test. 
 Different setid files should be created for different categories of test. Eg, if only non-synonymous variants were to be tested, a setid file should be created just containing non-synonymous variants for each gene, and exclude the other variant types such as synonymous, indels, etc.  
 There is no naming consensus on the setid filename, but it is advised to assign a meaningful name such as nonsynonymous.setid, rather than A.setid.  
+
 
 Eg. Nonsynonymous.setid  
 |ENSG00000000419|chr20:50935136:G:A|
@@ -61,6 +62,20 @@ Eg. Nonsynonymous.setid
 |ENSG00000000419|chr20:50942085:C:A|
 |ENSG00000001084|chr6:53500201:G:A|
 |ENSG00000001084|chr6:53500269:A:G|  
+
+Note: The variants were categorized according to variant annotation. For each category of variants, a setid should be made:  
+1. nonsynonymous.setid  
+2. synonymous.setid  
+3. frameshift_indel.setid  
+4. stoploss.setid  
+5. stopgain.setid  
+6. nonframeshift_indel.setid  
+7. splicing.setid  #2bp from exon-intron junction
+8. sift.setid  #damaging variants only
+9. polyphen.setid  #pathogenic variants only
+10. damaging(2/3/4/5/).setid  
+11. others  
+
 
 </details>  
 
