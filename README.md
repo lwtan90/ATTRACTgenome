@@ -75,6 +75,10 @@ sh postBURDENTESTpipeline.sh
 ```  
   
 ### burden.sh  
+Burden.sh will consolidate the list of variants (depending on the category of interest) that are located within the coding region of a gene,
+and perform SKAT/Burden test using the function implemented in R package SKAT. Plink is required to convert the genotype files into matrix format 
+required by the R package for processing. Other files required for the FAM files and eigenvec files from PCA analysis performed in WGSfiltering.sh.    
+
 
 ```
 #!/bin/bash
@@ -94,9 +98,7 @@ $PLINK --bfile "test_"$GENE --recodeA --out "test_"$GENE".mat"
 Rscript-3.5.1 /mnt/projects/wlwtan/cardiac+_epigenetics/burdentest.r $GENE
 rm "test_"$GENE*
 ```  
-Burden.sh will consolidate the list of variants (depending on the category of interest) that are located within the coding region of a gene,
-and perform SKAT/Burden test using the function implemented in R package SKAT. Plink is required to convert the genotype files into matrix format 
-required by the R package for processing. Other files required for the FAM files and eigenvec files from PCA analysis performed in WGSfiltering.sh.  
+
 
 If you have decided to run burden test on 1 gene, just run the following:  
 ```
