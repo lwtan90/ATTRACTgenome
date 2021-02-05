@@ -88,7 +88,7 @@ To prevent double counting, kindly use "uniq".
 cat ../sift.setid ../polyphen.setid | sort | uniq > target.setid
 ```  
 
-#### Step 3: Run burdentestPIPELINE.sh  
+##### Step 3: Run burdentestPIPELINE.sh  
 Store thie pipeline in a bin folder of your interest. For me, I have stored it in "/mnt/projects/wlwtan/cardiac_epigenetics/burden.sh". Therefore, before you start the analysis, change the location of the script (Full Path).  
 Firstly, the pipeline will create 10,000 commands to execute burden test. (depends on the number of genes in setid file formed in Step 2).  
 Next, the pipeline will split the 10,000 commands into groups of 50. You are now allowed to run 10K parallel jobs on Aquila.  
