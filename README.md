@@ -134,7 +134,7 @@ Rscript-3.5.1 bin/burdentest/manhatan.r statistics.txt burden.manhatan.png
 ```  
 
   
-### burden.sh  
+### Details about burden.sh  
 Burden.sh will consolidate the list of variants (depending on the category of interest) that are located within the coding region of a gene,
 and perform SKAT/Burden test using the function implemented in R package SKAT. Plink is required to convert the genotype files into matrix format 
 required by the R package for processing. Other files required for the FAM files and eigenvec files from PCA analysis performed in WGSfiltering.sh.    
