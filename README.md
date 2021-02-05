@@ -133,7 +133,7 @@ Rscript-3.5.1 bin/burdentest/qqplot.r statistics.txt burden.qqplot.png
 Rscript-3.5.1 bin/burdentest/manhatan.r statistics.txt burden.manhatan.png
 ```  
 
-####Expected Output  
+#### Expected Output  
 ##### annotated_statistics.txt  
 | gid | P.value | test | bonferroni | chr | start | end | hgnc | biotype | variant.count |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
