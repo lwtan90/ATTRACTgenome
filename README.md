@@ -60,7 +60,9 @@ Dependencies:
 2. PLINK v1.9 (https://zzz.bwh.harvard.edu/plink/)  
 
 This pipeline runs on SGE. Please modify the execution of the scripts if you have other linux system.  
-The key script to burdentestPIPELINE.sh is bin/burdentest/burden.sh  
+The key script to burdentestPIPELINE.sh is bin/burdentest/burden.sh.  
+  
+### burden.sh  
 
 ```
 #!/bin/bash
