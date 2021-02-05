@@ -93,6 +93,8 @@ Store thie pipeline in a bin folder of your interest. For me, I have stored it i
 Firstly, the pipeline will create 10,000 commands to execute burden test. (depends on the number of genes in setid file formed in Step 2).  
 Next, the pipeline will split the 10,000 commands into groups of 50. You are now allowed to run 10K parallel jobs on Aquila.  
 Lastly, 200 parallel jobs will be submitted to Aquila, each job should take about 1 hour.  
+Note: Also kindly read burden.sh section below on how to setup the filepath within the burden.sh scripts (especially the location of plink binary files).  
+
 
 ```
 ## Form the cmd for burdentest
