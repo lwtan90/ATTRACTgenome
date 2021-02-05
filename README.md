@@ -142,6 +142,7 @@ Rscript-3.5.1 bin/burdentest/manhatan.r statistics.txt burden.manhatan.png
 
 
 ##### qqplot.png  
+![QQPLOT](https://github.com/lwtan90/ATTRACTgenome/blob/master/img/qqplot.png)  
 
 ##### manhattan.png  
 
