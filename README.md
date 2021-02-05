@@ -137,8 +137,8 @@ Rscript-3.5.1 bin/burdentest/manhatan.r statistics.txt burden.manhatan.png
 ##### annotated_statistics.txt  
 | gid | P.value | test | bonferroni | chr | start | end | hgnc | biotype | variant.count |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| GENE100 | 3.03008428862551e-06 | BURDEN | 0.0468693437764594 | chr19 | 400002 | 42719898 | GENE100 | protein_coding | 8 |
-| GENE20 | 2.03008428862551e-06 | BURDEN | 0.1 | chr1 | 600302 | 2714898 | GENE30 | protein_coding | 34 |  
+| GENE100 | 3.03e-06 | BURDEN | 0.04 | chr19 | 400002 | 42719898 | GENE100 | protein_coding | 8 |
+| GENE20 | 2.03e-06 | BURDEN | 0.1 | chr1 | 600302 | 2714898 | GENE30 | protein_coding | 34 |  
 
 
 ##### qqplot.png  
