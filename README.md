@@ -61,6 +61,18 @@ Dependencies:
 
 This pipeline runs on SGE. Please modify the execution of the scripts if you have other linux system.  
 The key script to burdentestPIPELINE.sh is bin/burdentest/burden.sh.  
+
+### Running Burden Test Pipeline on SGE / Aquila:  
+```
+###Step 1: Make a folder with any folder name (Eg: SIFT_Polyphen #I would only want to collapse variants that are predicted as pathogenic by SIFT/Polyphen)  
+mkdir SIFT_Polyphen;
+###Step 2: Create listvariants.sh to create target.setid required for the analysis (See bin/burdentest/listvariants.sh for details)
+vi listvariants.sh
+###Step 3: Run burdentestPIPELINE.sh
+sh burdentestPIPELINE.sh
+###Step 4: Run postBURDENTESTpipeline.sh
+sh postBURDENTESTpipeline.sh
+```  
   
 ### burden.sh  
 
