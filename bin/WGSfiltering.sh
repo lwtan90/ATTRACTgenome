@@ -52,6 +52,7 @@ $PLINK --bfile parse2_QC_filtered_attract_preQC --make-bed  --out parse3_QC_filt
 ##Step 4: run PCA to identify population stratification
 ##Step 4: retain 10 PC
 ##Step 4: Use Excel/R to plot the eigenvec from the output, and decide on the cut-off to generate chinese.txt, indian.txt, malay.txt
+##Step 4: run plotPCA_race.r (See script for details)
 ##Step 4: Jump to Step 7 if the intension was to do common varian analysis
 $PLINK --bfile parse2_QC_filtered_attract_preQC --pca 10 --out parse2_QC_filtered_attract_preQC
 
